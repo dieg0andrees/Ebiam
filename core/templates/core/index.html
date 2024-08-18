@@ -1,0 +1,229 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+        <!-- slider section -->
+    <section class="slider_section ">
+        <div class="slider_bg_box">
+        <img src="{% static 'core/images/slider1-bg.jpg' %}" alt="">
+        </div>
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <div class="container ">
+                <div class="row">
+                <div class="col-md-7 ">
+                    <div class="detail-box">
+                    <h1>
+                        Calidad, eficiencia y compromiso en mantenimiento industrial <br>
+                        <p class="mt-3">No dudes en escojer nuestros servicios</p>
+                    </h1>
+                    <div class="btn-box">
+                        <a href="{% url 'service' %}" class="btn1">
+                            Ver servicios
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="container ">
+                <div class="row">
+                <div class="col-md-7 ">
+                    <div class="detail-box">
+                    <h1>
+                        Si buscas disponibilidad y un trabajo de calidad en poco tiempo 
+                        <p class="mt-3">Te invitamos a visitar nuestros servicios</p>
+                    </h1>
+                    <div class="btn-box">
+                        <a href="{% url 'service' %}" class="btn1">
+                            Ver servicios
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="container ">
+                <div class="row">
+                <div class="col-md-7 ">
+                    <div class="detail-box">
+                    <h1>
+                        Te entregamos el mejor
+                        Servicio de mecanizados de piezas
+                        <p class="mt-3">Empresa reconocida por sus trabajos con 100% de precisión</p>
+                    </h1>
+                    <div class="btn-box">
+                        <a href="{% url 'service' %}" class="btn1">
+                            Ver servicios
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+        </div>
+
+    </section>
+    <!-- end slider section -->
+    </div>
+
+
+    <!-- service section -->
+
+    <section class="service_section layout_padding">
+    <div class="service_container">
+        <div class="container ">
+        <div class="heading_container">
+            <h2>
+            Algunos de Nuestros <span>Servicios</span>
+            </h2>
+            <p>
+                En Mecanizados Ebiam, nos especializamos en ofrecer una amplia variedad de servicios industriales para satisfacer todas las necesidades de mantenimiento, reparación y optimización de su empresa. Con más de 20 años de experiencia en el sector, nuestro equipo está preparado para enfrentar cualquier desafío en el ámbito industrial. Descubra cómo nuestros servicios pueden ayudar a mejorar la eficiencia y la fiabilidad de sus operaciones.
+            </p>
+        </div>
+        <div class="row ">
+            {% for aux in lista|slice:":4" %}
+                <div class="col-md-6">
+                    <div class="box">
+                        <div class="img-box">
+                            <a href="{{ aux.imagen_principal.url }}" data-fancybox="gallery-{{ aux.id }}" data-caption="{{ aux.nombre }}">
+                                <img src="{{ aux.imagen_principal.url }}" alt="{{ aux.nombre }}">
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>{{ aux.nombre }}</h5>
+                            <p>{{ aux.descripcion }}</p>
+                            <a class="" href="/service#ver_servicios">Ir a Servicios</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- end service section -->
+
+
+
+
+    <!-- client section -->
+
+    <section class="brand_section">
+        <div class="container">
+            <div class="heading_container mb-5">
+                <h2>Conoce a nuestros <span>Clientes</span></h2>
+                <p>
+                    Las siguientes empresas han puesto su confianza en nosotros y siempre hemos respondido a todas sus necesidades. <br>
+                    No dudes en contar con nosotros!
+                </p>
+            </div>
+            <div id="brandCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_romeral.png' %}" class="d-block w-100" alt="Brand 1">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_chimolsa.png' %}" class="d-block w-100" alt="Brand 2">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_pizarreno.png' %}" class="d-block w-100" alt="Brand 3">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_ecoriles.png' %}" class="d-block w-100" alt="Brand 4">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_tissue.png' %}" class="d-block w-100" alt="Brand 5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_readymix.png' %}" class="d-block w-100" alt="Brand 6">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_melon.png' %}" class="d-block w-100" alt="Brand 7">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_corteva.png' %}" class="d-block w-100" alt="Brand 8">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_volcan.png' %}" class="d-block w-100" alt="Brand 9">
+                            </div>
+                            <div class="col-md-2">
+                                <img src="{% static 'core/images/logo_aguaandina.png' %}" class="d-block w-100" alt="Brand 10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#brandCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#brandCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- end client section -->
+
+    <!-- contact section -->
+    <section class="contact_section layout_padding-top" id="ubicacion">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 offset-md-1">
+                <div class="heading_container">
+                    <h2>Contáctanos</h2>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5 offset-md-1">
+                <div class="form_container">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="mt-5">Enviar</button>
+                        <button type="reset">Limpiar</button>
+                    </form>
+                    <p class="mt-4">¿Necesitas una respuesta inmediata? Contactanos por WhatsApp: <a href="https://wa.me/56977752051" target="_blank">Enviar mensaje</a>.</p>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6 px-0">
+                <div class="map_container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.2388263591856!2d-70.63422364700767!3d-33.62504903788306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d82f664656e3%3A0x6dbb1f0297f98075!2sLos%20Cipreses%202875%2C%208840143%20La%20Pintana%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1722288669260!5m2!1ses!2scl" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- end contact section -->
+    
+    
+{% endblock %}
+
+
+
+
+
+

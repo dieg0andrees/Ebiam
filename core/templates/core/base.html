@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="Mecanizados industriales, mantenimiento industrial, reparación de motores, mantenimiento de cintas de producción, servicios de bombas de agua, mecanizados con torno." />
+  <meta name="description" content="Con más de 20 años de experiencia, Mecanizados Ebiam ofrece servicios industriales completos, incluyendo mantenimiento de cintas de producción, motores, bombas de agua, reductores y mecanizados con torno." />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'core/images/favicon_ebiam.png' %}" type="">
+    
+
+  <title> Mecanizados Ebiam - Servicios Industriales de Mantenimiento y Reparación </title>
+
+
+  {% block css %}
+  {% endblock %}  
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'core/css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'core/css/responsive.css' %}" rel="stylesheet" />
+
+  <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'core/js/custom.js' %}" ></script>
+    
+
+</head>
+<body>
+
+    {% if messages %}
+    {% for data in messages %}
+    <script>
+        const titleMap = {
+            success: "¡Bien!",
+            error: "¡Error!",
+            info: "Información",
+            warning: "Advertencia"
+        };
+
+        // Obtener el tipo de mensaje (tags) y traducirlo a un título
+        const iconType = "{{ data.tags }}";
+        const titleText = titleMap[iconType] || "Notificación";
+
+        Swal.fire({
+        icon: iconType,
+        title: titleText,
+        text: "{{ data }}",
+    });
+    </script>
+    {% endfor %}
+    {% endif %}
+
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+        <div class="header_top">
+            <div class="container-fluid ">
+            <div class="contact_nav">
+                <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                    Llamanos : +56 977752051
+                </span>
+                </a>
+                <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                    Email : ebiamltda@gmail.com
+                </span>
+                </a>
+                <a href="/contact#ubicacion">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                    Ubicación
+                </span>
+                </a>
+            </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'core/images/logo_ebiam2.png' %}" alt="" class="logo-image">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'service' %}">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}"> Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contactanos</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+            </div>
+        </div>
+        </header>
+        
+    <!-- end header section -->
+    <a href="https://wa.me/56977752051" target="_blank" class="whatsapp-button">
+        <img src="{% static 'core/images/envianos_un_whatsapp.png' %}" alt="Envianos un whatsapp">
+    </a>
+    {% block contenido %}
+        
+    {% endblock %}
+    <!-- info section -->
+    
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6 col-lg-3 info_col">
+                <div class="info_contact">
+                <h4>
+                    Dirección
+                </h4>
+                <div class="contact_link_box">
+                    <a href="/contact#ubicacion">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                        Ubicación
+                    </span>
+                    </a>
+                    <a href="https://wa.me/56977752051">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        Llámanos +56 977752051
+                    </span>
+                    </a>
+                    <a href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        ebiamltda@gmail.com
+                    </span>
+                    </a>
+                </div>
+                </div>
+                <!--
+                <div class="info_social">
+                <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                </div>
+                -->
+            </div>
+            <div class="col-md-6 col-lg-3 info_col">
+                <div class="info_detail">
+                <h4>
+                    Horarios de atención
+                </h4>
+                <p>
+                    Lunes a Viernes: 09:00 a 19:00 horas
+                </p>
+                <p>
+                    Sabados: 09:00 a 14:00 horas
+                </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-2 mx-auto info_col">
+                <div class="info_link_box">
+                <h4>
+                    Links
+                </h4>
+                <div class="info_links">
+                    <a class="active" href="{% url 'index' %}">
+                    
+                    Home
+                    </a>
+                    <a class="" href="{% url 'about' %}">
+                    
+                    Nosotros
+                    </a>
+                    <a class="" href="{% url 'service' %}">
+                    
+                    Servicios
+                    </a>
+                    <a class="" href="{% url 'contact' %}">
+                    
+                    Contactanos
+                    </a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+    
+    <!-- end info section -->
+    <!-- footer section -->
+    <section class="footer_section">
+        <div class="container">
+        <p>
+            &copy; <span id="displayYear"></span> Mecanizados Ebiam - Todos los derechos reservados
+        </p>
+        </div>
+    </section>
+    <!-- footer section -->
+
+    {% block js %}
+    {% endblock %}
+    <!-- jQery -->
+    <script type="text/javascript" src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.js' %}"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static 'core/js/custom.js' %}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+    <!-- End Google Map -->
+     
+     <!-- Fancybox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    
+</body>
+
+</html>

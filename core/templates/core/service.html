@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+    <!-- service section -->
+    <section class="service_section layout_padding">
+        <div class="service_container">
+        <div class="container ">
+            <div class="heading_container" id="ver_servicios">
+            <h2>
+                Nuestros <span>Servicios</span>
+            </h2>
+            <p>
+                En Mecanizados Ebiam, nos especializamos en ofrecer una amplia variedad de servicios industriales para satisfacer todas las necesidades de mantenimiento, reparación y optimización de su empresa. Con más de 20 años de experiencia en el sector, nuestro equipo está preparado para enfrentar cualquier desafío en el ámbito industrial. Descubra cómo nuestros servicios pueden ayudar a mejorar la eficiencia y la fiabilidad de sus operaciones.
+            </p>
+            </div>
+            <div class="row ">
+                {% for aux in lista %}
+                <div class="col-md-6">
+                    <div class="box">
+                        <div class="img-box">
+                            <a href="{{ aux.imagen_principal.url }}" data-fancybox="gallery-{{ aux.id }}" data-caption="{{ aux.nombre }}">
+                                <img src="{{ aux.imagen_principal.url }}" alt="{{ aux.nombre }}">
+                            </a>
+                        </div>
+                        <div class="detail-box">
+                            <h5>{{ aux.nombre }}</h5>
+                            <p>{{ aux.descripcion }}</p>
+                            <a href="#" data-fancybox="gallery-{{ aux.id }}" data-caption="{{ aux.nombre }}" data-gallery="{{ aux.id }}">Más imagenes</a>
+                        </div>
+                        <div style="display: none;">
+                            {% for imagen in aux.imagenes.all %}
+                            <a href="{{ imagen.imagen.url }}" data-fancybox="gallery-{{ aux.id }}" data-caption="{{ aux.nombre }}">
+                                <img src="{{ imagen.imagen.url }}" alt="{{ aux.nombre }}">
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- end service section -->
+{% endblock %}

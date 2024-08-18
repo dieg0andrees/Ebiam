@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+    <!-- contact section -->
+    <section class="contact_section layout_padding-top" id="ubicacion">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 offset-md-1">
+                <div class="heading_container">
+                    <h2>Contáctanos</h2>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5 offset-md-1">
+                <div class="form_container">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="mt-5">Enviar</button>
+                        <button type="reset">Limpiar</button>
+                    </form>
+                    <p class="mt-4">¿Necesitas una respuesta inmediata? Contactanos por WhatsApp: <a href="https://wa.me/56977752051" target="_blank">Enviar mensaje</a>.</p>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6 px-0">
+                <div class="map_container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.2388263591856!2d-70.63422364700767!3d-33.62504903788306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d82f664656e3%3A0x6dbb1f0297f98075!2sLos%20Cipreses%202875%2C%208840143%20La%20Pintana%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1722288669260!5m2!1ses!2scl" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- end contact section -->
+{% endblock %}

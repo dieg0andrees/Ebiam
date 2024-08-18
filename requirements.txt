@@ -1,0 +1,7 @@
+django
+django-crispy-forms
+django-axex
+django-admin-honeypot
+django_recaptcha
+django-admin-confirm
+whitenoise

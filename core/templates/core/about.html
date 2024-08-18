@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+    <!-- about section -->
+    <section class="about_section layout_padding">
+        <div class="container  ">
+        <div class="row">
+            <div class="col-md-6">
+            <div class="detail-box">
+                <div class="heading_container">
+                <h2>
+                    Acerca de <span>Nosotros</span>
+                </h2>
+            </div>
+                </div>
+                <div class="nosotros mt-5">
+                    <h2>El <span>Comienzo</span></h2>
+                </div>
+                <p class="text-justify mt-2">
+                    En el año 2007 el Sr. Alfonso Muñoz comienza a plasmar las ideas que habian comenzado como solo un sueño, las cuales
+                    dieron frutos en un pequeño taller en la comuna de Puente Alto. Sin embargo los sueños seguían creciendo, por lo que decide
+                    comenzar una nueva etapa construyendo una nueva maestranza, con el fin de entregar un trabajo de calidad a todos sus clientes.
+                </p>
+                <div class="nosotros mt-5">
+                    <h2>Nuestra <span>Visión</span></h2>
+                </div>
+                <p class="text-justify mt-2">
+                    Nuestra visión como empresa es ser reconocidos como líderes en el sector industrial por nuestra capacidad de ofrecer soluciones integrales
+                    y de alta calidad que superen las expectativas de nuestros clientes. Aspiramos a ser la primera opción para 
+                    las empresas que buscan mejorar la eficiencia y confiabilidad de sus operaciones, innovando constantemente y 
+                    adoptando las tecnologías más avanzadas para resolver los desafíos industriales más complejos.
+                </p>
+                <div class="nosotros mt-5">
+                    <h2>Nuestros <span>Valores</span></h2>
+                </div>
+                <p class="text-justify mt-2">
+                    En Mecanizados Ebiam, nuestros valores fundamentales son la base de todo lo que hacemos. Nos comprometemos con la
+                    integridad, asegurándonos de que cada proyecto se maneje con transparencia y ética. La excelencia es nuestro 
+                    estándar, y trabajamos constantemente para superar las expectativas de nuestros clientes mediante soluciones 
+                    innovadoras y de alta calidad. 
+                </p>
+                <div class="nosotros mt-5">
+                    <h2>Nuestros <span>Equipo</span></h2>
+                </div>
+                <p class="text-justify mt-2">
+                    Nuestro equipo en Mecanizados Ebiam es el corazón de nuestra empresa. Contamos con un grupo de profesionales 
+                    altamente capacitados y apasionados por su trabajo, con décadas de experiencia en el sector industrial. Desde
+                    ingenieros hasta técnicos especializados, cada miembro del equipo aporta un conocimiento profundo y una dedicación
+                    incansable para resolver los desafíos más complejos de nuestros clientes.
+                </p>
+            </div>
+            <div class="col-md-6">
+            <div class="img-box">
+                <img src="{% static 'core/images/nosotros1.jpeg' %}" alt="nuestro_taller">
+            </div>
+            <div class="img-box mt-5">
+                <img src="{% static 'core/images/nosotros2.jpeg' %}" alt="nuestro_taller">
+            </div>
+            
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- end about section -->
+{% endblock %}
