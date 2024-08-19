@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',
     'axes',
-    'admin_honeypot',
+    #'admin_honeypot',
     'captcha',
     'django_recaptcha',
     
