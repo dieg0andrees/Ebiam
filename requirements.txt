@@ -5,4 +5,5 @@ django-admin-honeypot
 django_recaptcha
 django-admin-confirm
 whitenoise
-crispy-bootstrap4 
+crispy-bootstrap4
+django-simple-captcha
