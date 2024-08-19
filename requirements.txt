@@ -1,5 +1,5 @@
 crispy-bootstrap4==2024.1
-django==4.2.3
+django==5.0.4
 django-admin-confirm==1.0.0
 django-admin-honeypot==1.1.0
 django-admin-interface==0.28.6
