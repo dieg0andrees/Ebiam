@@ -174,27 +174,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #CONFIGURACION PARA LOS MENSAJE
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': BASE_DIR / 'debug.log',
-            'maxBytes': 1024*1024*5,  # 5 MB
-            'backupCount': 5,
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
