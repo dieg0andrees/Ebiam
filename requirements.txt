@@ -1,6 +1,6 @@
 django
 django-crispy-forms
-django-axex
+django-axes
 django-admin-honeypot
 django_recaptcha
 django-admin-confirm
