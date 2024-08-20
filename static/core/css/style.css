@@ -434,59 +434,81 @@ a:focus {
 }
 
 .service_section .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 45px;
   background-color: #f8f8f9;
   padding: 20px;
   border-radius: 5px;
-  align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
 }
 
 .service_section .box .img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 200px;  /* Aumentar el ancho */
-  min-width: 200px;  /* Ajustar ancho mínimo */
-  height: 200px;  /* Aumentar la altura */
+  justify-content: center;
+  align-items: flex-start;
+  width: 200px;  /* Ancho fijo para la imagen */
+  min-width: 200px;
+  max-height: 200px; /* Altura máxima para evitar desbordamientos */
   margin-right: 25px;
-  flex: 0 0 200px; /* Ancho fijo para la imagen */
-}
-
-.service_section .box .detail-box {
-  max-width: calc(100% - 225px); /* Ajustar basado en el ancho de la imagen y margen */
-  overflow: hidden; /* Evitar que el contenido se desborde */
-  flex: 1; /* Permite que el detalle ocupe el espacio restante */
-  padding: 15px;
+  flex: 0 0 200px;
+  overflow: hidden; /* Evita que el contenido se desborde fuera de la caja */
 }
 
 .service_section .box .img-box img {
-  max-width: none;  /* Permitir que la imagen exceda el tamaño del contenedor */
-  max-height: none;  /* Permitir que la imagen exceda el tamaño del contenedor */
-  width: 100%;  /* Hacer que la imagen ocupe todo el ancho del contenedor */
-  height: auto;  /* Mantener proporciones */
-  -webkit-transition: all .3s;
+  width: 100%;
+  height: 100%; /* Asegura que la imagen ocupe el contenedor */
+  object-fit: cover; /* Cubre el área disponible sin distorsionar la imagen */
   transition: all .3s;
+}
+
+.service_section .box .detail-box {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 15px;
+  min-width: 0;
+  word-wrap: break-word; /* Evita que el texto largo se salga del contenedor */
+  max-width: 100%;
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .service_section .box {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Alinea el contenido al centro */
+  }
+
+  .service_section .box .img-box {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    margin-right: 0;
+    margin-bottom: 15px;
+    flex: none;
+  }
+
+  .service_section .box .detail-box {
+    max-width: 100%; /* Asegura que el texto use todo el ancho disponible */
+    text-align: center; /* Alinea el texto al centro */
+  }
+}
+@media (max-width: 576px) {
+  .service_section .box {
+    flex-wrap: wrap;
+  }
+
+  .service_section .box .img-box {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    flex: none;
+  }
+
+  .service_section .box .detail-box {
+    max-width: 100%;
+  }
 }
 
 .service_section .box .detail-box h5 {
   font-weight: bold;
   text-transform: uppercase;
+  color: inherit;
 }
-
-.service_section .box .detail-box p {
-  overflow-wrap: break-word; /* Ajustar el texto largo */
-  line-height: 1.5; /* Mejorar la legibilidad */
-}
-
 
 .service_section .box .detail-box a {
   color: #04233b;
@@ -799,7 +821,7 @@ a:focus {
   border: none;
   text-transform: uppercase;
   display: inline-block;
-  padding: 12px 55px;
+  padding: 12px 30px;
   background-color: #0a97b0;
   color: #ffffff;
   border-radius: 5px;
@@ -1073,7 +1095,7 @@ a:focus {
 }
 
 .logo-image {
-  max-width: 90px; /* Ajusta el tamaño máximo deseado */
+  max-width: 95px; /* Ajusta el tamaño máximo deseado */
   height: auto; /* Mantiene la proporción original de la imagen */
 }
 
